@@ -27,12 +27,12 @@
         <tr>
             <td>Public Score</td>
             <td>38.50</td>
-            <td>49.80</td>
+            <td>54.40</td>
         </tr>
         <tr>
             <td>Private Score</td>
             <td>38.23</td>
-            <td>48.50</td>
+            <td>54.59</td>
         </tr>
     </table>
 </div>

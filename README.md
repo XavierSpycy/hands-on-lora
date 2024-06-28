@@ -1,5 +1,5 @@
 <h1>Hands-on Lora: Practical Fine-tuning LLMs</h1>
-<img src="https://img.shields.io/github/license/XavierSpycy/hands-on-lora">
+<img src="https://img.shields.io/badge/License-Apache_2.0-lightblue.svg">
 
 <h2 style="font-family:'Comic Sans MS', sans-serif; color: green;"><em>Deep Learning is an experimental science. If your hands aren't dirty, how can your mind be nifty?</em></h2>
 
