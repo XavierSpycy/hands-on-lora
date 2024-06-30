@@ -1,4 +1,4 @@
-<h1>Hands-on Lora: Practical Fine-tuning LLMs</h1>
+<h1>Hands-on LoRa: Practical Fine-tuning LLMs</h1>
 <img src="https://img.shields.io/badge/License-Apache_2.0-lightblue.svg">
 
 <h2 style="font-family:'Comic Sans MS', sans-serif; color: green;"><em>Deep Learning is an experimental science. If your hands aren't dirty, how can your mind be nifty?</em></h2>
@@ -20,27 +20,32 @@ layer of the Transformer architecture, greatly reducing the number of trainable 
             <td>LLM</td>
             <td>No. Parameters</td>
             <td>Task</td>
+            <td>LoRa/QLoRa</td>
             <td>Code</td>
           </tr>
           <tr>
             <td>Gemma-IT</td>
             <td>2B</td>
             <td>Text-to-text Generation</td>
+            <td>QLoRa</td>
             <td><a href="examples/gemma_text2text">Link</a></td>
           </tr>
           <tr>
             <td>Qwen 2</td>
             <td>1.5B</td>
             <td>Named Entity Recognition</td>
+            <td>LoRa</td>
             <td><a href="examples/qwen_ner">Link</a></td>
           </tr>
           <tr>
             <td>Llama 3</td>
             <td>8B</td>
             <td>Cross-Linguistic Adaptation</td>
+            <td>LoRa</td>s
             <td><a href="examples/llama_chinese">Link</a></td>
           </tr>
       </table>
   </div>
 
-> Note: Lora is an elegant technique, yet fine-tuning LLMs with it demands considerable engineering effort. Optimal performance requires thorough optimization. In our repository, we provide foundational examples—consider them your starting point. There are numerous steps to achieve excellence. We encourage you to leverage your talents and creativity to achieve more outstanding results.
+> [!NOTE]
+> LoRa is an elegant technique, yet fine-tuning LLMs with it demands considerable engineering effort. Optimal performance requires thorough optimization. In our repository, we provide foundational examples—consider them your starting point. There are numerous steps to achieve excellence. We encourage you to leverage your talents and creativity to achieve more outstanding results.
