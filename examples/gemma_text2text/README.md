@@ -37,4 +37,4 @@
     </table>
 </div>
 
-> **Note**: For more details on the evaluation metrics, please refer to the [Evaluation Metric page](https://www.kaggle.com/competitions/llm-prompt-recovery/overview/evaluation).
+> [!Note]: For more details on the evaluation metrics, please refer to the [Evaluation Metric page](https://www.kaggle.com/competitions/llm-prompt-recovery/overview/evaluation).
