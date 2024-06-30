@@ -13,6 +13,8 @@
 - Merged model weights: [XavierSpycy/Meta-Llama-3-8B-Instruct-zh-10k](https://huggingface.co/XavierSpycy/Meta-Llama-3-8B-Instruct-zh-10k)
 
 ## Additional Information
+> [!IMPORTANT] Deployment-related updates will not be posted here. For detailed deployment updates, please refer to our repository:: [llama-ops](https://github.com/XavierSpycy/llama-ops).
+
 - How to use:
     - **Install dependencies** such as torch, transformers, modelscope, etc.
 
@@ -52,3 +54,46 @@
         Q: 你好，你是谁？
 
         A: 你好！我是一个人工智能助手，我的名字叫做AI助手。
+
+- `llama.cpp`: Quantization:?
+
+    - Prepare:
+
+        ```bash
+        $ source ./quantize_prepare.sh
+        ```
+    
+    - Quantize:
+
+        ```bash
+        $ source ./quantize.sh
+        ```
+    
+    - Test:
+
+        ```bash
+        $ source ./quantize_test.sh
+        ```
+
+        Terminate the process using `Ctrl` or `Control` plus `C`.
+
+- `llama.cpp`: Deployment? 
+    - Deploy
+        - Method 1: Command line
+
+            ```bash
+            $ source ./deploy_cli.sh
+            ```
+
+            Simlarly, kill the process using `Ctrl` or `Control` plus `C`.
+
+        - Method 2: Docker (Untested)
+
+            ```bash
+            $ source ./deploy_docker.sh
+            ```
+    - Test
+
+        ```bash
+        $ source ./deploy_test.sh
+        ```
