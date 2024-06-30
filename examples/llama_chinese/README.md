@@ -13,7 +13,8 @@
 - Merged model weights: [XavierSpycy/Meta-Llama-3-8B-Instruct-zh-10k](https://huggingface.co/XavierSpycy/Meta-Llama-3-8B-Instruct-zh-10k)
 
 ## Additional Information
-> [!IMPORTANT] Deployment-related updates will not be posted here. For detailed deployment updates, please refer to our repository:: [llama-ops](https://github.com/XavierSpycy/llama-ops).
+> [!IMPORTANT] 
+> Deployment-related updates will not be posted here. For detailed deployment updates, please refer to our repository:: [llama-ops](https://github.com/XavierSpycy/llama-ops).
 
 - How to use:
     - **Install dependencies** such as torch, transformers, modelscope, etc.
@@ -55,7 +56,7 @@
 
         A: 你好！我是一个人工智能助手，我的名字叫做AI助手。
 
-- `llama.cpp`: Quantization:?
+- `llama.cpp`: Quantization
 
     - Prepare:
 
@@ -77,7 +78,7 @@
 
         Terminate the process using `Ctrl` or `Control` plus `C`.
 
-- `llama.cpp`: Deployment? 
+- `llama.cpp`: Deployment
     - Deploy
         - Method 1: Command line
 
