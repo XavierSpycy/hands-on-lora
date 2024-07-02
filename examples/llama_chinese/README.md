@@ -14,7 +14,7 @@
 
 ## Additional Information
 > [!IMPORTANT] 
-> Deployment-related updates will not be posted here. For detailed deployment updates, please refer to our repository:: [llama-ops](https://github.com/XavierSpycy/llama-ops).
+> Deployment-related updates will not be posted here. For detailed deployment updates, please refer to our repository: [llama-ops](https://github.com/XavierSpycy/llama-ops).
 
 - How to use:
     - **Install dependencies** such as torch, transformers, modelscope, etc.
