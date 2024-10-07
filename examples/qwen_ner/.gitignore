@@ -1,0 +1,4 @@
+*.pyc
+model_weights/*
+dataset/train.json
+dataset/test.json
