@@ -1,3 +1,4 @@
+English | [中文](README.zh-CN.md)
 <h1>Hands-on LoRa: Practical Fine-tuning LLMs using LoRa</h1>
 <img src="https://img.shields.io/badge/License-Apache_2.0-lightblue.svg">
 
@@ -34,7 +35,7 @@ layer of the Transformer architecture, greatly reducing the number of trainable 
             <td>Qwen 2</td>
             <td>1.5B</td>
             <td>Named Entity Recognition</td>
-            <td>LoRa</td>
+            <td>QLoRa</td>
             <td><a href="examples/qwen_ner">Link</a></td>
           </tr>
           <tr>
