@@ -35,3 +35,5 @@ python3 construct_text_data.py
 python3 inference.py \
     --model_name_or_path MODEL_NAME_OR_PATH
 ```
+
+- 中文博客: [知乎](https://zhuanlan.zhihu.com/p/982156163) ｜ [CSDN](https://blog.csdn.net/NJ_Xavier/article/details/143064590)
