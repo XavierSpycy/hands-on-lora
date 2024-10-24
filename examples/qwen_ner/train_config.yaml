@@ -1,0 +1,63 @@
+model_name_or_path: Qwen/Qwen2-1.5B-Instruct
+
+load_dataset_kwargs:
+  data_folder: dataset
+  path: csv
+  data_files: 
+    train: train.csv
+  test_size: 0.1
+  seed: 3407
+
+lora_kwargs:
+  task_type: CAUSAL_LM
+  r: 128
+  target_modules: all-linear
+  lora_alpha: 256
+  lora_dropout: 0.02
+  fan_in_fan_out: False
+  bias: 'lora_only'
+  use_rslora: True
+
+bnb_kwargs:
+  load_in_8bit: False
+  load_in_4bit: True
+  llm_int8_threshold: 6.0
+  bnb_4bit_compute_dtype: bfloat16
+  bnb_4bit_quant_type: nf4
+  bnb_4bit_use_double_quant: True
+
+training_args_kwargs:
+  output_dir: Qwen2-1.5B-Instruct-SFT
+  train_batch_size: 16
+  eval_batch_size: 16
+  gradient_checkpointing: True
+  gradient_accumulation_steps: 4
+  bf16: True
+  learning_rate: 5.0e-5
+  optim: paged_adamw_32bit
+  lr_scheduler_type: cosine
+  max_grad_norm: 0.3
+  max_steps: 100
+  warmup_steps: 20
+  eval_steps: 1
+  save_strategy: steps
+  eval_strategy: steps
+  save_steps: 1
+  logging_steps: 1
+  save_total_limit: 3
+  load_best_model_at_end: True
+  overwrite_output_dir: True
+  report_to: 'none'
+  seed: 3407
+  data_seed: 3407
+  max_seq_length: 512
+  dataset_text_field: text
+  dataloader_num_workers: 16
+  packing: True
+  remove_unused_columns: False
+  neftune_noise_alpha: 5
+  use_liger: True
+
+train_kwargs:
+  resume_from_checkpoint: null
+  final_checkpoint: Qwen2-1.5B-Instruct-SFT/checkpoint-optimal

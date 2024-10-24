@@ -30,7 +30,7 @@ def get_bnb_config(
         load_in_8bit: bool = False,
         load_in_4bit: bool = True,
         llm_int8_threshold: float = 6.0,
-        bnb_4bit_compute_dtype = torch.bfloat16,
+        bnb_4bit_compute_dtype: str = 'bfloat16',
         bnb_4bit_quant_type: str = "nf4",
         bnb_4bit_use_double_quant: bool = True,
     ) -> BitsAndBytesConfig:
@@ -39,7 +39,7 @@ def get_bnb_config(
         load_in_8bit=load_in_8bit,
         load_in_4bit=load_in_4bit,
         llm_int8_threshold=llm_int8_threshold,
-        bnb_4bit_compute_dtype=bnb_4bit_compute_dtype,
+        bnb_4bit_compute_dtype=getattr(torch, bnb_4bit_compute_dtype),
         bnb_4bit_quant_type=bnb_4bit_quant_type,
         bnb_4bit_use_double_quant=bnb_4bit_use_double_quant,
     )

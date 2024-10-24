@@ -1,8 +1,12 @@
 # Qwen2 -> Named Entity Recognition
+> [!NOTE]
+> With the latest update, the pipeline now supports high-level training control through a YAML file, eliminating the need to modify source code, except when adding a new dataset.
+> For new datasets, you must still convert your dataset to the required format.
+> For all other cases, simply **modify the configuration file** (i.e., train_config.yaml) to make necessary adjustments.
 
 ## Basic Information
 ### Setup Details
-- Accelerator: NVIDIA RTX 4090D $\times$ 1
+- Accelerator: NVIDIA RTX 4090D $\times$ 2
 - Platform: Linux
 - Internet: Enabled
 
@@ -36,4 +40,6 @@ python3 inference.py \
     --model_name_or_path MODEL_NAME_OR_PATH
 ```
 
-- 中文博客: [知乎](https://zhuanlan.zhihu.com/p/982156163) ｜ [CSDN](https://blog.csdn.net/NJ_Xavier/article/details/143064590)
+## Blogs / 中文博客
+- [知乎](https://zhuanlan.zhihu.com/p/982156163)：【大模型微调】Qwen SFT：基于 trl 框架的 QLoRA 微调
+- [CSDN](https://blog.csdn.net/NJ_Xavier/article/details/143064590)：【大模型微调】Qwen SFT：基于 trl 框架的 QLoRA 微调

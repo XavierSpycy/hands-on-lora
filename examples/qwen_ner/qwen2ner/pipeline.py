@@ -20,18 +20,18 @@ from .training_args import get_training_args
 
 class Qwen2NERPipeline:
     
-    def __init__(self, model_name_or_path: str, data_folder: str = 'dataset') -> None:
+    def __init__(self, model_name_or_path: str = 'Qwen/Qwen2-1.5B-Instruct') -> None:
         self.model_name_or_path = model_name_or_path
-        self.data_folder = data_folder
     
     def load_dataset(
         self,
+        data_folder: str = 'dataset',
         path: str = 'csv',
         data_files: Dict[str, str] = {'train': 'train.csv'},
         test_size: float = 0.1,
         seed: Optional[int] = 3407,
     ) -> None:
-        data_files = {split: os.path.join(self.data_folder, data_file) for split, data_file in data_files.items()}
+        data_files = {split: os.path.join(data_folder, data_file) for split, data_file in data_files.items()}
         dataset = load_dataset(path=path, data_files=data_files, split='train')
         dataset = dataset.train_test_split(test_size=test_size, seed=seed)
         self.train_dataset = dataset['train']
@@ -43,7 +43,7 @@ class Qwen2NERPipeline:
 
         self.model = AutoModelForCausalLM.from_pretrained(
             self.model_name_or_path,
-            device_map="auto", 
+            device_map={'':torch.cuda.current_device()}, 
             quantization_config=self.bnb_config,
             torch_dtype=torch.bfloat16,
         )
@@ -68,8 +68,10 @@ class Qwen2NERPipeline:
         self.peft_config = get_lora_config(**lora_kwargs)
         self.bnb_config = get_bnb_config(**bnb_kwargs)
     
-    def get_training_args(self) -> None:
-        self.training_args = get_training_args(output_dir=self.model_name_or_path.split('/')[-1] + '-SFT')
+    def get_training_args(
+            self,
+            training_args_kwargs) -> None:
+        self.training_args = get_training_args(**training_args_kwargs)
 
     def train(
             self, 
@@ -110,11 +112,11 @@ class Qwen2NERPipeline:
         model.save_pretrained(self.model_name_or_path.split('/')[-1] + '-SFT')
         tokenizer.save_pretrained(self.model_name_or_path.split('/')[-1] + '-SFT')
 
-    def __call__(self):
-        self.load_dataset()
-        self.get_peft_config()
+    def run(self, config: Dict[str, Any]) -> None:
+        self.load_dataset(**config['load_dataset_kwargs'])
+        self.get_peft_config(lora_kwargs=config['lora_kwargs'], bnb_kwargs=config['bnb_kwargs'])
         self.init_model()
         self.init_data_collator()
-        self.get_training_args()
-        self.train()
+        self.get_training_args(config['training_args_kwargs'])
+        self.train(**config['train_kwargs'])
         self.merge()

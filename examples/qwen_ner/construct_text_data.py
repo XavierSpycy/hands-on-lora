@@ -9,7 +9,7 @@ from qwen2ner.default import DEFAULT_SYSTEM_PROMPT
 TEMPLATE = '<|im_start|>system\n{}<|im_end|>\n<|im_start|>user\n{}<|im_end|>\n<|im_start|>assistant\n{}<|im_end|>\n'
 
 parser = argparse.ArgumentParser()
-parser.add_argument('--split', type=str)
+parser.add_argument('--split', type=str, default='train')
 
 if __name__ == '__main__':
     args = parser.parse_args()
